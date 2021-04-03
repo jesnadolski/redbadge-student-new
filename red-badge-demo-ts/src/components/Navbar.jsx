@@ -8,6 +8,7 @@ import {
   NavItem,
   NavLink,
 } from "reactstrap";
+import {Link} from 'react-router-dom';
 
 const SiteBar = (props) => {
   const [collapsed, setCollapsed] = useState(true);
@@ -24,12 +25,14 @@ const SiteBar = (props) => {
         <Collapse isOpen={!collapsed} navbar>
           <Nav navbar>
             <NavItem>
-              <NavLink href="/components/">Components</NavLink>
+              <Link to='/contact' onClick={toggleNavbar}>
+              <NavLink>Contact Us</NavLink>
+              </Link>
             </NavItem>
             <NavItem>
-              <NavLink href="https://github.com/reactstrap/reactstrap">
-                GitHub
-              </NavLink>
+              <Link to="/store" onClick={toggleNavbar}>
+              <NavLink>Store</NavLink>
+              </Link>
             </NavItem>
           </Nav>
         </Collapse>
